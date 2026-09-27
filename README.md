@@ -27,14 +27,14 @@ The first photo is a powered prototype, photographed at home. It is useful to fi
 
 <p align="center"><img src="docs/assets/powered-board.jpg" alt="Powered Headway prototype showing train departures at home" width="620"> <img src="docs/assets/night-board.jpg" alt="Powered Headway prototype showing departures after dark" width="620"></p>
 
-These short loops are taken from the new phone videos. They show the device booting and moving through its live pages; the original MOV recordings remain outside this repository.
+The phone videos show all five looks on the powered board, moving from trains to buses and weather. [Play the silent clips](docs/index.html#photos) or open a look directly: [Original](docs/assets/headway-original.webm), [Bahnsteig](docs/assets/headway-bahnsteig.webm), [Amber Matrix](docs/assets/headway-amber-matrix.webm), [Papier](docs/assets/headway-papier.webm), [Split-Flap](docs/assets/headway-split-flap.webm). These are short, compressed excerpts; the full-resolution MOV recordings remain outside this repository.
 
-<p align="center"><img src="docs/assets/headway-demo-1734.webp" alt="Short phone-video loop of Headway starting" width="310"> <img src="docs/assets/headway-demo-1735.webp" alt="Short phone-video loop of Headway showing the weather page" width="310"><br><sub>Starting and weather</sub></p>
-<p align="center"><img src="docs/assets/headway-demo-1736.webp" alt="Short phone-video loop of Headway showing device status" width="310"> <img src="docs/assets/headway-demo-1737.webp" alt="Short phone-video loop of Headway showing an intro screen" width="310"><br><sub>Status and intro screens</sub></p>
+<p align="center"><img src="docs/assets/headway-original-loop.webp" alt="Original look moving through pages on the physical Headway board" width="260"> <img src="docs/assets/headway-bahnsteig-loop.webp" alt="Bahnsteig look moving through pages on the physical Headway board" width="260"> <img src="docs/assets/headway-amber-matrix-loop.webp" alt="Amber Matrix look moving through pages on the physical Headway board" width="260"><br><sub>Original · Bahnsteig · Amber Matrix</sub></p>
+<p align="center"><img src="docs/assets/headway-papier-loop.webp" alt="Papier look moving through pages on the physical Headway board" width="260"> <img src="docs/assets/headway-split-flap-loop.webp" alt="Split-Flap look moving through pages on the physical Headway board" width="260"><br><sub>Papier · Split-Flap</sub></p>
 
 ## Take a look
 
-The [screen gallery](docs/index.html#screens) lets you switch **five looks** and the train, bus, weather, outlook and device-setup screens. Its preview images were rendered from the actual drawing code with sample data, not photographed from hardware. The images are from firmware 1.2.6; 1.2.7 changed the delay-history restart behaviour and boot version, not the other page drawings.
+The [screen gallery](docs/index.html#screens) lets you switch **five looks** and the train, bus, weather, outlook and device-setup screens. Its preview images were rendered from the actual drawing code with sample data, not photographed from hardware. Most gallery images are from firmware 1.2.6. Firmware 1.2.7 changed delay-history restart behaviour; 1.2.8 changes the small temperature-history graph on the outlook page, shown separately below.
 
 <p align="center"><img src="docs/previews_v1.2.6/O_2_trains.png" alt="Original look train departures" width="320"> <img src="docs/previews_v1.2.6/A_2_trains.png" alt="Bahnsteig look train departures" width="320"><br><sub>Original and Bahnsteig, using the same sample departures.</sub></p>
 
@@ -120,6 +120,12 @@ The [screen gallery](docs/index.html#screens) lets you switch **five looks** and
 
 The page order is **trains → Bahnhof Stadtbus → P+R-Platz → weather now → three-day outlook**. Trains can occupy one to four screens depending on the returned services. Automatic page changes and scrolling long destinations are separate, optional settings. The [full guide](docs/FEATURE_GUIDE.md) explains every badge, time, colour, icon, graph mark, status message and control with examples.
 
+### Temperature history in 1.2.8
+
+The graph at the bottom of the three-day outlook now draws a bar from **each day's low to its high**. The two numbers beside it are the coldest low and warmest high in the displayed window. A day with no reported low becomes a short mark at its high. This comparison uses current PC renders with sample weather data; the phone videos above show the physical board running earlier screens.
+
+<p align="center"><a href="docs/assets/temperature-history-1.2.8.png"><img src="docs/assets/temperature-history-1.2.8.png" alt="Firmware 1.2.8 low-to-high temperature history shown in all five Headway looks" width="820"></a><br><sub>The updated outlook graph in all five looks. Click for the full-size image.</sub></p>
+
 ### The history strip
 
 The train footer shows 180 elapsed-minute slots. It averages positive reported lateness among comparable realtime departures due within the next hour of each fetched board. Red marks show cancellations separately; grey marks warn of incomplete realtime coverage; gaps mean no usable sample. It is a quick view of recent feed reports, not a station-wide punctuality score. Since firmware 1.2.7 the strip survives a software restart, with a gap for the restart, but loses its history when power is removed. [Read the graph definition](docs/DELAY_GRAPH.md).
@@ -165,9 +171,21 @@ The [feature guide](docs/FEATURE_GUIDE.md#boot-controls-and-setup) covers the QR
 
 <p align="center"><img src="enclosure/model_A/rev9/images/isometric.png" alt="Model A wall case isometric CAD view" width="400"> <img src="enclosure/model_B/rev2/images/isometric.png" alt="Model B desk case isometric CAD view" width="400"><br><sub>Current shell geometry rendered from the FreeCAD exports, not physical-product photos.</sub></p>
 
+### On the slicer bed
+
+These are actual slicer screenshots: Model A has the shell and back plate, while Model B also has its separate desk stand. The orange lines are sliced layers, not a photo of the print.
+
+<p align="center"><img src="docs/assets/slicer-model-a.webp" alt="Model A shell and back plate arranged in a slicer" width="400"> <img src="docs/assets/slicer-model-b.webp" alt="Model B shell, back plate and stand arranged in a slicer" width="400"><br><sub>Model A · wall / Model B · desk</sub></p>
+
+[Full-size Model A slicer screenshot](enclosure/slicer/modelA.png) · [Full-size Model B slicer screenshot](enclosure/slicer/modelB.png)
+
 Both have [isometric, front, back, top and side views](enclosure/README.md), plus back-plate views and a separate stand view for Model B. The [FreeCAD sources and printable parts](enclosure/README.md) are kept with each model. These photos show printed revisions and the loose parts before assembly; they do not prove the latest CAD fit.
 
 <p align="center"><img src="docs/assets/print-warm.jpg" alt="Headway case parts on the printer bed under warm light" width="270"> <img src="docs/assets/print-revisions.jpg" alt="Six printed Headway shell revisions laid out on a blue mat" width="270"> <img src="docs/assets/assembly-parts.jpg" alt="Headway enclosure, display, ESP32-C3 and fasteners before assembly" width="270"><br><sub>Print in progress, revisions, and the parts laid out before assembly.</sub></p>
+
+The close assembly photo shows **three brass heat-set inserts visible in the front shell**, beside the wired ESP32-C3, display and screws. That small hardware detail is new territory for me, and it makes the enclosure easier to open again.
+
+<p align="center"><img src="docs/assets/thread-inserts.jpg" alt="Close assembly view showing three brass threaded inserts in the printed front shell, ESP32-C3, display and screws" width="620"><br><sub>The threaded inserts are visible in the white front shell.</sub></p>
 
 ## Wiring and pinout
 
@@ -186,7 +204,7 @@ These are estimates, not a documented power-meter reading for this revision. A U
 
 ## Current state and rights
 
-Firmware **1.2.7** is in the [code repository](https://github.com/haldarsaurav/Headway_code), along with tests, preview tooling, build instructions and the changelog. Its PC renders, 52 compile-time logic/graph assertions and nine setup scenarios passed; the new firmware still needs an ESP32 compile, flash and physical display check. The CAD also needs a fit check. See [project status](docs/PROJECT_STATUS.md) for the precise scope.
+Firmware **1.2.8** is in the [code repository](https://github.com/haldarsaurav/Headway_code), along with tests, preview tooling, build instructions and the changelog. The source project reports PC renders of every look and regression checks; the nine setup scenarios passed again in this repository sync. I have not compiled or flashed 1.2.8 on the ESP32 here. The current CAD also needs a full fit check. See [project status](docs/PROJECT_STATUS.md) for the precise scope.
 
 Copyright 2026 **Saurav Haldar**. This public repository is for viewing the project. Use and reuse require permission under the [licence](LICENSE); the [AI-use policy](AI_POLICY.md) and [permission guide](docs/PERMISSIONS.md) explain the request process. Third-party transport, weather and font material retains its own terms.
 

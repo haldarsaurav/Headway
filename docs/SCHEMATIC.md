@@ -1,6 +1,6 @@
 # Wiring and pinout
 
-Headway Rev1.2 / firmware v1.2.7 — the whole circuit is two boards and nine wires.
+Headway Rev1.2 / firmware v1.2.8 — the whole circuit is two boards and nine wires.
 No resistors, no level shifters, no extra button: MODE is the BOOT button already on the ESP32-C3.
 
 <p align="center"><img src="assets/wiring.svg" alt="Logical nine-wire pinout from ESP32-C3 Super Mini to the MSP3218 display" width="850"><br><sub>Logical wiring map for this build; check the labels on the boards in your hands.</sub></p>

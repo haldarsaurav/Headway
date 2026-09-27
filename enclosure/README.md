@@ -18,6 +18,10 @@ This is the case I plan to place near my bathroom mirror or by the front door. I
 
 [FreeCAD model](model_A/rev9/Headway_enclosure_rev9.FCStd) · [STEP](model_A/rev9/Headway_enclosure_rev9.step) · [parts, print orientation and assembly](model_A/rev9/README_REV9.md)
 
+<p align="center"><img src="../docs/assets/slicer-model-a.webp" alt="Model A shell and back plate arranged on a slicer bed" width="680"><br><sub>Model A in the slicer: shell and back plate.</sub></p>
+
+[Full-size slicer screenshot](slicer/modelA.png)
+
 ## Model B · desk, rev2
 
 Model B puts the board on my desk. Its separate stand leans the screen back 15°. The USB-C cable comes in from the right and the case can lift out of the stand. Rev2 carries the same four-insert closure as Model A; the stand is a separate print.
@@ -33,10 +37,16 @@ Model B puts the board on my desk. Its separate stand leans the screen back 15°
 
 [FreeCAD model](model_B/rev2/Headway_desk_rev2.FCStd) · [STEP](model_B/rev2/Headway_desk_rev2.step) · [parts, print orientation and assembly](model_B/rev2/README_DESK_REV2.md)
 
+<p align="center"><img src="../docs/assets/slicer-model-b.webp" alt="Model B shell, back plate and desk stand arranged on a slicer bed" width="680"><br><sub>Model B in the slicer: shell, back plate and separate stand.</sub></p>
+
+[Full-size slicer screenshot](slicer/modelB.png)
+
 ## About the printed parts
 
 Using heat-set threaded inserts was a first for me. I like being able to open the case again without cutting a fresh screw thread in the plastic each time. The source notes specify four M2.5 × 3 × 3.5 inserts, three M2.5 × 12 countersunk screws for the display posts and one M2.5 × 6 for the corner boss. The optional fit-test STL is intended to check the window before a full shell print. Print settings and insertion steps are in each model's README.
 
 <p align="center"><img src="../docs/assets/print-warm.jpg" alt="Case parts on the printer bed" width="270"> <img src="../docs/assets/print-revisions.jpg" alt="Printed enclosure iterations arranged on a mat" width="270"> <img src="../docs/assets/assembly-parts.jpg" alt="Shell, display, ESP32-C3 and fasteners before assembly" width="270"><br><sub>Print in progress, iterations and parts laid out before assembly.</sub></p>
+
+<p align="center"><img src="../docs/assets/thread-inserts.jpg" alt="Three brass threaded inserts visible in the printed front shell, beside the ESP32-C3, display and screws" width="600"><br><sub>Three of the front-shell inserts are visible in this assembly photo.</sub></p>
 
 The CAD geometry has had script-level overlap checks, but the current enclosure revisions still need a complete physical fit, screw engagement and heat check. The image renderer is in [render_views.py](render_views.py), so the five-view sets can be recreated from the FreeCAD-exported STL files.

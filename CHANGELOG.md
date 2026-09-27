@@ -1,5 +1,10 @@
 # Public showcase changelog
 
+## Firmware 1.2.8 — 27 September 2026
+
+- The outlook temperature graph now shows each day's low-to-high range across the last 30 days plus today. The left labels are the coldest low and warmest high; days without a low use a short mark.
+- Added a public preview of the 1.2.8 graph and clarified that the phone photos and clips document the earlier powered prototype rather than proving a 1.2.8 flash.
+
 ## Rev1.2 refresh — 27 September 2026
 
 - Reworked the README around why I built Headway and the everyday use I imagine by the mirror, front door and desk.

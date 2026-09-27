@@ -1,6 +1,6 @@
 # Complete screen, icon and feature guide
 
-**Feature meanings from Rev1.1, retained in Rev1.2 · firmware 1.2.7**
+**Feature meanings from Rev1.1, retained in Rev1.2 · firmware 1.2.8**
 
 This guide uses the **Original** look to explain the data fields, symbols, colours and controls.
 Rev1.2 also offers Bahnsteig, Amber Matrix, Papier and Split-Flap; their layouts and palettes
@@ -8,7 +8,7 @@ vary, while the data and controls described here remain the same. See the [switc
 All examples are invented to
 explain the display; they are not live departures or a forecast. The enlarged legend diagrams
 are explanatory drawings. The screen renders below use the 1.2.6 drawing code; 1.2.7 changes the boot version and
-restart handling, while the other page drawings stay the same.
+restart handling, while 1.2.8 adds the low-to-high temperature history graph.
 
 [Back to the project](../README.md) · [Permission and reuse](PERMISSIONS.md)
 
@@ -304,19 +304,22 @@ so it is not a complete census of station traffic or a measure of all cancellati
 ## Temperature history
 
 The small graph at the bottom of the three-day page is a different measurement: up to **30
-previous daily highs plus today's high**, supplied by the weather service. These are provider
-weather/model values, not readings from a temperature sensor in this desk device. Today's
-high is still a forecast value.
+previous days plus today, each with its daily low and daily high**, supplied by the weather
+service (firmware 1.2.8 and later; before, only the highs). These are provider weather/model
+values, not readings from a temperature sensor in this desk device. Today's low and high are
+still forecast values.
 
 | Mark | Meaning and reason |
 | --- | --- |
 | One bar per day | Oldest left, today on the right; shorter available histories leave unused space |
-| Height | Each day's high, scaled to the current window; not the fixed delay-graph scale |
-| Blue through cyan/green to yellow/orange/red | Cooler to warmer temperature; smoothly blended rather than a warning level |
-| Fade toward the bottom | A visual treatment to keep a dense footer quieter; not extra data |
-| Warm upper and cool lower numbers at left | Highest and lowest **daily high** within the displayed window; the lower number is not a nightly low |
+| Bottom and top of a bar | That day's low and high, scaled from the coldest low to the warmest high in the window; not the fixed delay-graph scale |
+| Tall or short bar | A large or small day-night swing |
+| Blue through cyan/green to yellow/orange/red | The temperature of each pixel row, so a bar runs cool at its foot and warm at its top; smoothly blended rather than a warning level |
+| Look-specific texture | Theme shading or LED rows; visual texture, not extra data |
+| Warm upper and cool lower numbers at left | The warmest high and coldest low within the displayed window |
+| Short 2 px mark instead of a bar | The service gave that day's high but no low |
 | Faint week marks | One, two, three and four weeks back from today |
-| White cap on the final bar | Identifies today; unlike the train graph, it does not mean scale overflow |
+| Cap on the final bar | Identifies today; unlike the train graph, it does not mean scale overflow |
 | Missing bar | No usable daily high for that position |
 
 The colour reference runs from blue at roughly **−10/0 °C**, through cyan near **8 °C**, green
@@ -361,7 +364,7 @@ data loss. No new departure information can be created while offline.
 
 | Visible item or action | Meaning and reason |
 | --- | --- |
-| `Headway` and the version (e.g. `v1.2.7`) on startup | Project and installed firmware identity |
+| `Headway` and the version (e.g. `v1.2.8`) on startup | Project and installed firmware identity |
 | Startup status line | Progress such as starting or joining Wi-Fi |
 | Red last-restart information | Stored diagnostic reason, such as a power dip or watchdog reset; not a new weather/transport alert |
 | Button tap | Advance exactly one page after debounce |
@@ -451,7 +454,7 @@ provider coverage and a small fixed departure buffer limit what can be shown. Co
 operator information when a departure or cancellation matters.
 
 Rev1.2 firmware 1.2.0 passed ESP32-C3 compile/link verification, 52 logic/graph assertions and
-the setup-page JavaScript scenarios. Firmware 1.2.1–1.2.7 passed the same tests plus PC renders of
+the setup-page JavaScript scenarios. Firmware 1.2.1–1.2.8 passed the same tests plus PC renders of
 every screen in every look under memory checks, but has not yet been compiled for the ESP32 or
 flashed. Tiny-icon legibility on the actual panel, overnight stability and enclosure fit remain
 unverified. See the [release status](PROJECT_STATUS.md) for the first-flash checklist.
