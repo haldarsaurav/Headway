@@ -48,6 +48,8 @@ The [Espressif ESP32-C3 module datasheet](https://documentation.espressif.com/es
 | LED | 5V | backlight | always on; biggest single power draw |
 | T_* / SD_* | — | touch + SD card | not used |
 
+**Backlight check:** this project's wiring plan puts the module's `LED` pin on the board's 5 V rail. The [MSP3218 manual](https://www.lcdwiki.com/res/MSP3218/3.2inch_SPI_Module_MSP3218_User_Manual_EN.pdf) describes 3.3 V for an always-on backlight. Confirm the exact module's backlight circuit and rating before copying the 5 V connection; the published diagram records this build's wiring, not a universal module recommendation.
+
 | On the ESP32 board | GPIO | Used as |
 |---|---|---|
 | BOOT button | 9 | **MODE** — tap = next page, hold 3 s = setup |

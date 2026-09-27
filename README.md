@@ -153,7 +153,7 @@ Both have [isometric, front, back, top and side views](enclosure/README.md), plu
 
 ## Wiring and energy
 
-The circuit is two boards and nine wires. The display uses the C3's 3V3, GND, 5V and GPIO 3/4/5/6/7/10; BOOT on GPIO 9 is the control. [Pinout diagram and wiring table](docs/SCHEMATIC.md) · [ESP32-C3 module datasheet](https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.html) · [MSP3218 display manual and pinout](https://www.lcdwiki.com/res/MSP3218/3.2inch_SPI_Module_MSP3218_User_Manual_EN.pdf). Check the labels on your actual boards before powering them; Super Mini variants differ.
+The circuit is two boards and nine wires. The display uses the C3's 3V3, GND, 5V and GPIO 3/4/5/6/7/10; BOOT on GPIO 9 is the control. [Pinout diagram and wiring table](docs/SCHEMATIC.md) · [ESP32-C3 module datasheet](https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.html) · [MSP3218 display manual and pinout](https://www.lcdwiki.com/res/MSP3218/3.2inch_SPI_Module_MSP3218_User_Manual_EN.pdf). Check the labels on your actual boards before powering them; Super Mini variants differ. The project drawing uses 5 V on the display LED pin, while the MSP3218 manual describes 3.3 V for always-on backlighting, so verify that connection on the exact module.
 
 At an **assumed** average of 0.75 W, 24-hour operation works out to **6.57 kWh/year**. At an example energy price of €0.30/kWh, that is about **€1.97/year** in energy, before any standing charge. The 0.75 W figure is not a documented meter reading for this revision; I still want to check it with a USB power meter.
 
