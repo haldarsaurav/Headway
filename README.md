@@ -139,7 +139,7 @@ The portal presents its controls in separate cards:
 - **Save and restart:** stores the settings and restarts. The delay graph keeps recent readings across that software restart, leaving a gap while setup was open.
 - **Start over:** asks a second time, then forgets Wi-Fi and every setting and empties the history.
 
-The [feature guide](docs/FEATURE_GUIDE.md#boot-controls-and-setup) covers the QR screens, controls and troubleshooting. **Start over** asks again, then forgets the Wi-Fi and every setting and empties the delay history.
+The [feature guide](docs/FEATURE_GUIDE.md#boot-controls-and-setup) covers the QR screens, controls and troubleshooting.
 
 ## The two cases
 
