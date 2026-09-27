@@ -3,6 +3,13 @@
 **Prior written permission from Saurav Haldar (@haldarsaurav) is required.**
 This is a proprietary project. Public visibility is not an invitation to reuse it.
 
+Please do not scrape, crawl, bulk download or collect my original writing, project plan,
+build notes, diagrams, photos, video clips, CAD, screen designs or code for AI training,
+retrieval, automated summaries intended for replication, or a copy of this project.
+The documented plan and the way these parts are expressed and combined are part of what
+I am asking people to respect. Ask me before reusing that material, even if you intend
+to rewrite it or use it only as a starting point.
+
 Without that permission, do not use protected project material:
 
 - to train, fine-tune, distil, evaluate or improve AI/ML models, or to create datasets;
@@ -21,5 +28,5 @@ version, intended output, tools/models and distribution you propose. If issues a
 use a contact method published on [the owner's profile](https://github.com/haldarsaurav).
 
 The full [LICENSE](LICENSE), including its third-party, platform and applicable-law provisions,
-controls. This policy reserves permission; it is not a crawler blocker or a guarantee of legal
-protection for abstract ideas, algorithms or general features.
+controls. This policy states my permission terms; it is not a technical crawler blocker or a
+claim of exclusive legal rights over abstract ideas, algorithms or general features.

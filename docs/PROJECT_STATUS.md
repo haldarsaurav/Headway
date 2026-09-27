@@ -17,7 +17,10 @@ and UBSan (normal data, stress data and 40 rounds of Split-Flap page changes, tu
 refreshes) with no errors; Original renders are pixel-identical to 1.2.1 apart from the version
 number; 52 compile-time logic/graph assertions and 9 setup-page scenarios pass.
 
-**Not yet done - the first flash is the real check:**
+New phone photos and short video loops show a powered Headway prototype. They do not establish
+that firmware 1.2.7 was flashed or that the current Rev9 / desk rev2 CAD has passed a fit check.
+
+**Still needed for firmware 1.2.7 and the current CAD:**
 
 1. Compile in the Arduino IDE (quit the IDE completely before opening the updated files).
    Expect roughly 76 % flash. Any compile error is new in 1.2.1–1.2.7.

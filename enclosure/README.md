@@ -2,7 +2,7 @@
 
 [Back to the project](../README.md) · [Interactive CAD gallery](../docs/index.html#enclosures)
 
-Both current designs come from editable FreeCAD models. The gallery images below were rendered from those models' exported STL geometry. They show the design, not an assembled or fit-verified device. The printer-bed photos in the [main README](../README.md#the-two-cases) are real case prints.
+Both current designs come from editable FreeCAD models. The gallery images below were rendered from those models' exported STL geometry. They show the design, not an assembled or fit-verified device. The [main README](../README.md#the-two-cases) also shows real print iterations and the parts before assembly; its [powered-board photos](../README.md#the-board-in-use) show a physical prototype, without proving the latest CAD revision fits.
 
 ## Model A · wall, Rev9
 
@@ -36,5 +36,7 @@ Model B puts the board on my desk. Its separate stand leans the screen back 15°
 ## About the printed parts
 
 Using heat-set threaded inserts was a first for me. I like being able to open the case again without cutting a fresh screw thread in the plastic each time. The source notes specify four M2.5 × 3 × 3.5 inserts, three M2.5 × 12 countersunk screws for the display posts and one M2.5 × 6 for the corner boss. The optional fit-test STL is intended to check the window before a full shell print. Print settings and insertion steps are in each model's README.
+
+<p align="center"><img src="../docs/assets/print-warm.jpg" alt="Case parts on the printer bed" width="270"> <img src="../docs/assets/print-revisions.jpg" alt="Printed enclosure iterations arranged on a mat" width="270"> <img src="../docs/assets/assembly-parts.jpg" alt="Shell, display, ESP32-C3 and fasteners before assembly" width="270"><br><sub>Print in progress, iterations and parts laid out before assembly.</sub></p>
 
 The CAD geometry has had script-level overlap checks, but the current enclosure revisions still need a complete physical fit, screw engagement and heat check. The image renderer is in [render_views.py](render_views.py), so the five-view sets can be recreated from the FreeCAD-exported STL files.
