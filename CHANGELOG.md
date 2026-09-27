@@ -12,7 +12,7 @@
 - Replaced the old Rev7 and planned desk-case sections with current Model A Rev9 and Model B rev2 FreeCAD sources, print files and isometric/front/back/top/side views. Added a stand view for Model B and actual printer-bed photos, labelled as such.
 - Added the nine-wire pinout map and links to the ESP32-C3 and MSP3218 technical documents.
 - Recast the 0.75 W electricity figure as an assumption pending a meter check. At that assumption, continuous use is 6.57 kWh/year; example cost is €1.97/year at €0.30/kWh.
-- Updated ownership, repository links and permission-only licence and AI policy to the Headway name. Hardware compile, flash and fit checks are still open.
+- Updated ownership, repository links and permission notices to the Headway name. Hardware compile, flash and fit checks are still open.
 
 ## Firmware 1.2.7 — 27 September 2026
 

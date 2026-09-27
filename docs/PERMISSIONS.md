@@ -3,8 +3,8 @@
 **All rights reserved. Ask first, and receive written permission before reuse.**
 
 The owner wants the project to be viewable as a showcase, without granting others permission
-to copy its work or use it as a reference for an AI-generated replacement. Both repositories
-carry the same [full proprietary licence](../LICENSE) and [AI-use policy](../AI_POLICY.md).
+to copy its work or recreate its implementation or presentation. Both repositories
+carry the same [full proprietary licence](../LICENSE).
 
 ## Examples
 
@@ -14,12 +14,12 @@ carry the same [full proprietary licence](../LICENSE) and [AI-use policy](../AI_
 | Flash the firmware onto your own ESP32 | Ask for written permission first |
 | Copy screen artwork or documentation into another project | Ask first |
 | Sell a device incorporating the project | Ask first; disclose commercial use |
-| Give an AI the files or screenshots to recreate the implementation or presentation | Ask first, including when the output uses different source text |
-| Train a model, create embeddings for reuse, or build a dataset from the project | Ask first |
+| Recreate the implementation or presentation from files or screenshots | Ask first, including when the new work uses different source text |
+| Scrape, bulk download or build a dataset from the project | Ask first |
 | Star the project, cite its URL or request permission | None of these actions grants reuse permission |
 
-Requests should identify the requester, material/version, intended use, commercial status,
-AI involvement and planned distribution. Send the request through the
+Requests should identify the requester, material/version, intended use, commercial status
+and planned distribution. Send the request through the
 [public repository's issues](https://github.com/haldarsaurav/headway/issues)
 or a contact method published on [the owner's profile](https://github.com/haldarsaurav).
 Silence is not consent. Only the owner can grant project permission.

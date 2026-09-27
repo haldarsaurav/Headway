@@ -9,7 +9,7 @@
 | **[Screens and five looks →](#take-a-look)** | **[First setup →](#first-setup-in-plain-steps)** |
 | **[Photos and video clips →](#the-board-in-use)** | **[FreeCAD cases →](#the-two-cases)** |
 | **[Data flow →](#how-it-works)** | **[Wiring and pinout →](#wiring-and-pinout)** |
-| **[Electricity use →](#electricity-use)** | **[Reuse and AI policy →](#current-state-and-rights)** |
+| **[Electricity use →](#electricity-use)** | **[Reuse and permissions →](#current-state-and-rights)** |
 
 The [screen and icon guide](docs/FEATURE_GUIDE.md) goes page by page. [Firmware and tests](https://github.com/haldarsaurav/Headway_code) live in the code repository.
 
@@ -206,6 +206,6 @@ These are estimates, not a documented power-meter reading for this revision. A U
 
 Firmware **1.2.8** is in the [code repository](https://github.com/haldarsaurav/Headway_code), along with tests, preview tooling, build instructions and the changelog. The source project reports PC renders of every look and regression checks; the nine setup scenarios passed again in this repository sync. I have not compiled or flashed 1.2.8 on the ESP32 here. The current CAD also needs a full fit check. See [project status](docs/PROJECT_STATUS.md) for the precise scope.
 
-Copyright 2026 **Saurav Haldar**. This public repository is for viewing the project. Use and reuse require permission under the [licence](LICENSE); the [AI-use policy](AI_POLICY.md) and [permission guide](docs/PERMISSIONS.md) explain the request process. Third-party transport, weather and font material retains its own terms.
+Copyright 2026 **Saurav Haldar**. This public repository is for viewing the project. Use and reuse require permission under the [licence](LICENSE); the [permission guide](docs/PERMISSIONS.md) explains the request process. Third-party transport, weather and font material retains its own terms.
 
 Please do not scrape the writing, diagrams, images, CAD, code or documented project plan into AI datasets or use them to recreate Headway without my written permission. The [AI-use policy](AI_POLICY.md) gives the full request path and its legal limits.

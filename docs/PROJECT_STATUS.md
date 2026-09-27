@@ -72,8 +72,8 @@ policy to the reviewed firmware revision; the earlier `rev1.1` tag is preserved 
 - The [complete feature guide](https://github.com/haldarsaurav/headway/blob/main/docs/FEATURE_GUIDE.md),
   covering screen fields, symbols, colours, graph legends, controls, examples and limitations.
 - Two enlarged explanation diagrams, visually checked for clipping and legibility.
-- Matching proprietary [licence](../LICENSE), [AI-use policy](../AI_POLICY.md) and
-  [permission guide](PERMISSIONS.md) in both repositories.
+- Matching proprietary [licence](../LICENSE) and [permission guide](PERMISSIONS.md)
+  in both repositories.
 - A complete local Rev1.1 ZIP containing reviewed source, documentation and existing CAD
   snapshots, with a per-file SHA-256 manifest. Private settings and reference photos are excluded.
 
@@ -96,5 +96,5 @@ physical results. The illustrations are not evidence of hardware testing.
 
 The public repository's older commits may still contain the original firmware. They were not
 rewritten. The new notices do not retrospectively revoke earlier valid grants or GitHub platform
-rights, and cannot physically prevent copying or AI access. The owner nevertheless expressly
+rights, and cannot physically prevent copying. The owner nevertheless expressly
 requires prior written permission for the protected reuse described in the licence.

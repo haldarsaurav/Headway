@@ -460,4 +460,4 @@ flashed. Tiny-icon legibility on the actual panel, overnight stability and enclo
 unverified. See the [release status](PROJECT_STATUS.md) for the first-flash checklist.
 
 The original artwork, documentation and project material remain subject to the
-[proprietary licence](../LICENSE) and [AI-use policy](../AI_POLICY.md).
+[proprietary licence](../LICENSE) and [permission guide](PERMISSIONS.md).
