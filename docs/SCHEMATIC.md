@@ -1,7 +1,11 @@
-# 🔌 Schematic (text version)
+# Wiring and pinout
 
-Train Bus Weather Signboard Rev1.1 / firmware v1.1.0 — the whole circuit is two boards and nine wires.
+Headway Rev1.2 / firmware v1.2.7 — the whole circuit is two boards and nine wires.
 No resistors, no level shifters, no extra button: MODE is the BOOT button already on the ESP32-C3.
+
+<p align="center"><img src="assets/wiring.svg" alt="Logical nine-wire pinout from ESP32-C3 Super Mini to the MSP3218 display" width="850"><br><sub>Logical wiring map for this build; check the labels on the boards in your hands.</sub></p>
+
+The [Espressif ESP32-C3 module datasheet](https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.html) covers GPIO and boot behaviour. The [MSP3218 user manual](https://www.lcdwiki.com/res/MSP3218/3.2inch_SPI_Module_MSP3218_User_Manual_EN.pdf) gives the display connector pinout; its [product page](https://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218) links further display documents. Super Mini carrier boards can differ, so these sources supplement rather than replace the actual silkscreen.
 
 ```
                          USB-C  (5 V power + serial + flashing)

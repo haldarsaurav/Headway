@@ -1,14 +1,14 @@
 # Complete screen, icon and feature guide
 
-**Feature meanings from Rev1.1, retained in Rev1.2 · firmware 1.2.0**
+**Feature meanings from Rev1.1, retained in Rev1.2 · firmware 1.2.7**
 
 This guide uses the **Original** look to explain the data fields, symbols, colours and controls.
 Rev1.2 also offers Bahnsteig, Amber Matrix, Papier and Split-Flap; their layouts and palettes
-vary, while the data and controls described here remain the same. See the [theme previews](../README.md#five-looks-in-rev12).
+vary, while the data and controls described here remain the same. See the [switchable gallery](index.html#screens) for every look and page.
 All examples are invented to
 explain the display; they are not live departures or a forecast. The enlarged legend diagrams
-are explanatory drawings. The other screen renders show the earlier layout and can contain
-older version labels and the earlier train graph.
+are explanatory drawings. The screen renders below use the 1.2.6 drawing code; 1.2.7 changes the boot version and
+restart handling, while the other page drawings stay the same.
 
 [Back to the project](../README.md) · [Permission and reuse](PERMISSIONS.md)
 
@@ -35,7 +35,7 @@ then back to trains. Trains occupy one to four pages of six entries, depending o
 services. There are therefore five to eight screens in total. Both bus stops always have their
 own page, with up to ten departures each.
 
-Tap MODE to move forward. Automatic page changing and long-name scrolling are independent
+Tap the button to move forward. Automatic page changing and long-name scrolling are independent
 options and both default to off. With automatic changing enabled, a manual tap also restarts
 the page's dwell time. When the train-page count changes, the selected bus/weather page is kept
 as the same kind of page rather than unexpectedly jumping to another feed.
@@ -49,11 +49,25 @@ as the same kind of page rather than unexpectedly jumping to another feed.
 | Rows appearing in a short cascade on page changes | Makes the page transition visible without a long animation |
 | A long name moving sideways | Optional text scrolling, not movement of the actual vehicle |
 | A name ending in `..` | The name was shortened to fit; it is not a special stop name |
-| `ae`, `oe`, `ue`, `ss` in some names | German characters are transliterated for the display fonts |
+| Slightly shorter Ä, Ö, Ü | Capital umlauts are drawn a little lower so the dots fit the line height, as on LED signs |
+
+### What the other looks add (firmware 1.2.2 and later)
+
+Bahnsteig, Amber Matrix, Papier and Split-Flap show the same data with a few extra cues. Real
+umlauts (ä, ö, ü, ß) are drawn in every look, Original included (since 1.2.5).
+
+| Visual treatment | Meaning and reason |
+| --- | --- |
+| Large block at the top of the first train page | The next departure: countdown in minutes, line, time (struck planned time and `+N` when late), destination, and the platform on its own sign (`GLEIS` / `GL`); the five departures after it follow as rows |
+| Destination sliding sideways (any train or bus page) | The name is longer than its space and scrolling is on; with scrolling off it ends in `…` |
+| Split-Flap: a name changing to its second half every 3 s | The same long name shown in parts, like a real flap board; a via part (`Ü. …`) always starts a new part |
+| Split-Flap: a few flaps briefly flipping | New data changed those characters (for example the countdown); flaps that did not change stay still |
+| Split-Flap weather: stack of small flaps under each hour | Lit up to that hour's temperature relative to the next 12 hours (one flap coldest, five warmest), in its temperature colour |
+| Split-Flap weather: narrow blue stack beside it | Chance of rain in that hour, one flap per 20 % |
 
 ## Train pages
 
-![Train page: illustrative layout](images/screen_trains.png)
+![Train page: illustrative layout](previews_v1.2.6/O_2_trains.png)
 
 | Item | What it means | Why it is there / example |
 | --- | --- | --- |
@@ -95,7 +109,7 @@ can scroll if enabled.
 
 | Bahnhof Stadtbus | P+R-Platz |
 | --- | --- |
-| ![Town bus page](images/screen_bus_stadtbus.png) | ![P+R page](images/screen_bus_pr.png) |
+| ![Town bus page](previews_v1.2.6/O_3_stadtbus.png) | ![P+R page](previews_v1.2.6/O_4_pr.png) |
 
 The white header names the stop and shows the local clock. The Bahnhof Stadtbus page keeps
 city-bus routes, filtering regional/express coach routes. P+R-Platz shows the other configured
@@ -149,7 +163,7 @@ for every possible weather code.
 
 ## Weather now
 
-![Current weather: illustrative screen](images/screen_weather_now.png)
+![Current weather: illustrative screen](previews_v1.2.6/O_5_weather.png)
 
 | Item | Meaning | Why / example |
 | --- | --- | --- |
@@ -205,7 +219,7 @@ is only the first retained hour, so do not assume perfect hourly coverage from p
 
 ## Next three days
 
-![Three-day outlook: illustrative screen](images/screen_weather_3day.png)
+![Three-day outlook: illustrative screen](previews_v1.2.6/O_6_outlook.png)
 
 There is one row for each of the next three days **after today**. Each row has three bands:
 conditions/temperatures, rain timing, then sun/daylight/wind/moon information.
@@ -281,8 +295,10 @@ can have the grey coverage marker. Two reported delays of 90 and 180 seconds ave
 **2.3 minutes** after rounding once to a tenth. An early train does not subtract from another's delay.
 
 Multiple responses within one minute replace that minute's reading. Outages retain gaps;
-old samples age out even if no new response arrives. History is held in RAM and clears on
-restart, including an automatic recovery restart. The fetched board is capped at 24 trains,
+old samples age out even if no new response arrives. Since firmware 1.2.7 the history survives
+a restart - Save on the setup page (for example a new look), a watchdog or a crash - and the
+minutes the board spent restarting or in setup show as gaps. Unplugging the board clears it,
+and so does **Start over**. The fetched board is capped at 24 trains,
 so it is not a complete census of station traffic or a measure of all cancellations.
 
 ## Temperature history
@@ -345,18 +361,18 @@ data loss. No new departure information can be created while offline.
 
 | Visible item or action | Meaning and reason |
 | --- | --- |
-| `Departure Board` and `v1.1.0` on startup | Project and installed firmware identity |
+| `Headway` and the version (e.g. `v1.2.7`) on startup | Project and installed firmware identity |
 | Startup status line | Progress such as starting or joining Wi-Fi |
 | Red last-restart information | Stored diagnostic reason, such as a power dip or watchdog reset; not a new weather/transport alert |
-| MODE tap | Advance exactly one page after debounce |
-| MODE held for about one second | Show `keep holding for setup...` |
+| Button tap | Advance exactly one page after debounce |
+| Button held for about one second | Show `keep holding for setup...` |
 | Yellow bar filling along the bottom during a running-screen hold | Progress from the one-second hint toward the three-second setup action |
 | Release after the hint but before three seconds | Restore the current page without opening setup |
-| Hold through three seconds | Enter setup; MODE also works during the startup Wi-Fi join |
+| Hold through three seconds | Enter setup; the button also works during the startup Wi-Fi join |
 | RESET | Restart the board |
 | `Setup` header | The device is showing setup instructions, not refreshing its normal boards |
 
-MODE is the physical BOOT button. Holding it while applying power or pressing RESET can enter
+The button is the physical BOOT button. Holding it while applying power or pressing RESET can enter
 the chip's flashing/download mode and leave the display dark. Release it, reset, then start
 the hold after the splash appears.
 
@@ -367,7 +383,7 @@ the hold after the splash appears.
 2. **After a device connects to the setup access point:** the same QR area changes to the
    local settings-page address. Scan again or browse to **http://192.168.4.1/**.
 
-`Desk-Transport-Display` identifies the setup Wi-Fi. The printed `192.168.4.1` is the local
+`Headway-Setup` identifies the setup Wi-Fi. The printed `192.168.4.1` is the local
 setup address, not a public internet site. A red connection-error line explains a failed join
 when present. Do not publish a photograph of your actual join QR if its embedded password
 should stay private; documentation QR pictures are examples.
@@ -378,7 +394,8 @@ restarting. The normal display mode does not offer the settings web server.
 
 ## Settings and examples
 
-![Current setup page, including the Look selector](previews_v1.2.0/portal_0.png)
+[See the setup portal broken into readable cards](index.html#setup) and the
+[current device setup screen](previews_v1.2.6/O_8_setup.png).
 
 | Setting or label | What it does and why |
 | --- | --- |
@@ -390,18 +407,19 @@ restarting. The normal display mode does not offer the settings web server.
 | `In use now` | Currently resolved weather location; `(default)` indicates the fallback label |
 | Detect automatically | Approximate location from the internet connection; VPN/provider routing may point elsewhere |
 | Use this town | Look up the typed town after saving; check the resolved name on the weather page |
-| Change pages automatically | Switch pages after the selected interval rather than only with MODE |
+| Change pages automatically | Switch pages after the selected interval rather than only with the button |
 | Time on each page | Default 10 seconds; standard options 5, 10, 15, 20, 30, 45 and 60 seconds |
-| Scroll long destination names | Independently allows text to slide so more of a long name can be read |
-| Look | Choose Original, Bahnsteig, Amber Matrix, Papier or Split-Flap; the display changes after Save |
+| Scroll long destination names | Independently allows text to slide so more of a long name can be read (Split-Flap: turns over in parts) |
+| Look | Original (default), Bahnsteig, Amber Matrix, Papier or Split-Flap; the board restarts into it after Save |
 | Save and restart | Validate and store the configuration, then restart into normal mode |
 | `Saving...` / disabled Save | A save attempt is underway; wait for its result |
 | Saved/restarting confirmation | The board acknowledged the save; reconnect the phone to normal Wi-Fi |
 | `No confirmation received...` | The browser did not confirm the outcome; check the board and reconnect before retrying |
+| Start over | After a second confirmation, forgets the Wi-Fi, every setting and the delay graph and restarts into first-time setup in the Original look |
 | Last unexpected restart with optional count | Helps identify repeated power or blocking problems; it is not a current network signal reading |
 
 **Example:** keep manual page selection, turn on scrolling, and enter `Freising` as the weather
-town. After Save, pages will still change only by MODE, but long destinations can move. Choosing
+town. After Save, pages will still change only by the button, but long destinations can move. Choosing
 a different weather town changes the forecast location, not the fixed Freising transport stops.
 
 ### Common questions
@@ -414,7 +432,7 @@ a different weather town changes the forecast location, not the fixed Freising t
 | Weather clock moves but data is old | The header clock is local time; check the footer time and health dot |
 | `dry` next to a nonzero probability | No hourly bin crossed the wet-hour rule; “dry” is not a guarantee |
 | An unexpected weather town | Automatic IP location or the first town-search match may differ from the intended place |
-| Empty destination suffix or abbreviated text | Small-screen clipping/transliteration; enable scrolling for more of the name |
+| Empty destination suffix or abbreviated text | Small-screen clipping; enable scrolling for the whole name |
 | `nan` or an impossible value such as negative humidity | Incomplete upstream fields can expose an unavailable-value placeholder; it is not a valid measurement |
 | History disappeared | It is RAM-only for train delay; restart clears it, then new observations fill it |
 | Dark screen after holding BOOT during power-on | Release BOOT and press RESET, then hold only after startup begins |
@@ -432,11 +450,11 @@ selecting a faraway weather town does not make this a general world-time display
 provider coverage and a small fixed departure buffer limit what can be shown. Consult official
 operator information when a departure or cancellation matters.
 
-Rev1.1 source passed compile/link verification, 52 logic/graph assertions and five setup-page
-JavaScript scenarios. This documentation and permission-policy finalization does not change
-firmware behaviour. Physical flashing, tiny-icon legibility on the actual panel, overnight
-stability and enclosure fit remain unverified in this review. See the
-[release status](PROJECT_STATUS.md) for the completed deliverables and those physical checks.
+Rev1.2 firmware 1.2.0 passed ESP32-C3 compile/link verification, 52 logic/graph assertions and
+the setup-page JavaScript scenarios. Firmware 1.2.1–1.2.7 passed the same tests plus PC renders of
+every screen in every look under memory checks, but has not yet been compiled for the ESP32 or
+flashed. Tiny-icon legibility on the actual panel, overnight stability and enclosure fit remain
+unverified. See the [release status](PROJECT_STATUS.md) for the first-flash checklist.
 
 The original artwork, documentation and project material remain subject to the
 [proprietary licence](../LICENSE) and [AI-use policy](../AI_POLICY.md).

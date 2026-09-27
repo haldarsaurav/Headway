@@ -20,7 +20,7 @@ carry the same [full proprietary licence](../LICENSE) and [AI-use policy](../AI_
 
 Requests should identify the requester, material/version, intended use, commercial status,
 AI involvement and planned distribution. Send the request through the
-[public repository's issues](https://github.com/haldarsaurav/train_bus_weather_signboard/issues)
+[public repository's issues](https://github.com/haldarsaurav/headway/issues)
 or a contact method published on [the owner's profile](https://github.com/haldarsaurav).
 Silence is not consent. Only the owner can grant project permission.
 

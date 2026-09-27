@@ -1,25 +1,40 @@
-# 3D printed enclosure
+# The two Headway cases
 
-The current design is [Rev7](rev7/README_REV7.md). It replaces clips with three M2.5 heat-set
-inserts and three countersunk screws. The Rev7 folder contains the FreeCAD source model, STEP,
-STL parts, optional fit test, 3MF print layout and CAD illustrations. The
-[preview renderer](freecad/render_rev7_previews.py) recreates the images from the STL exports
-with NumPy and Pillow.
+[Back to the project](../README.md) · [Interactive CAD gallery](../docs/index.html#enclosures)
 
-![Rev7 front shell](rev7/images/rev7_front.png)
+Both current designs come from editable FreeCAD models. The gallery images below were rendered from those models' exported STL geometry. They show the design, not an assembled or fit-verified device. The printer-bed photos in the [main README](../README.md#the-two-cases) are real case prints.
 
-Print the optional fit test before committing to the full case. Display, ESP32 board, USB,
-BOOT key, screw engagement and enclosure fit have not been physically verified for this revision.
+## Model A · wall, Rev9
 
-## Tilted desk version — coming soon
+This is the case I plan to place near my bathroom mirror or by the front door. It has a display window, a small picture-card opening and access to the BOOT key. Rev9 adds a fourth screw boss and stronger ESP32 ribs. Four M2.5 heat-set inserts and countersunk screws make the back removable. The three display screws also clamp the display; the fourth closes the far corner.
 
-A 15° tilted desk variant is in development. CAD views and print files will be posted when the
-design is ready. The Rev7 files above are the currently documented printable enclosure.
+<p align="center"><img src="model_A/rev9/images/isometric.png" alt="Model A isometric CAD view" width="680"><br><sub>Isometric front shell</sub></p>
 
-## Physical photos — coming soon
+<p align="center"><img src="model_A/rev9/images/front.png" alt="Model A front CAD view" width="450"><br><sub>Front</sub></p>
+<p align="center"><img src="model_A/rev9/images/back.png" alt="Model A back CAD view" width="450"><br><sub>Back / inside of shell</sub></p>
+<p align="center"><img src="model_A/rev9/images/top.png" alt="Model A top CAD view" width="450"><br><sub>Top</sub></p>
+<p align="center"><img src="model_A/rev9/images/side.png" alt="Model A side CAD view" width="450"><br><sub>Side</sub></p>
+<p align="center"><img src="model_A/rev9/images/back_plate.png" alt="Model A separate back plate CAD view" width="450"><br><sub>Separate back plate</sub></p>
 
-- Finished 3D-printed enclosure photos
-- Photos of the powered signboard in everyday use
+[FreeCAD model](model_A/rev9/Headway_enclosure_rev9.FCStd) · [STEP](model_A/rev9/Headway_enclosure_rev9.step) · [parts, print orientation and assembly](model_A/rev9/README_REV9.md)
 
-The [station-display inspiration photo](../docs/images/inspiration_station_display.jpg) is a
-reference image, not a photo of this enclosure or a finished device.
+## Model B · desk, rev2
+
+Model B puts the board on my desk. Its separate stand leans the screen back 15°. The USB-C cable comes in from the right and the case can lift out of the stand. Rev2 carries the same four-insert closure as Model A; the stand is a separate print.
+
+<p align="center"><img src="model_B/rev2/images/isometric.png" alt="Model B isometric CAD view" width="680"><br><sub>Isometric front shell</sub></p>
+
+<p align="center"><img src="model_B/rev2/images/front.png" alt="Model B front CAD view" width="450"><br><sub>Front</sub></p>
+<p align="center"><img src="model_B/rev2/images/back.png" alt="Model B back CAD view" width="450"><br><sub>Back / inside of shell</sub></p>
+<p align="center"><img src="model_B/rev2/images/top.png" alt="Model B top CAD view" width="450"><br><sub>Top</sub></p>
+<p align="center"><img src="model_B/rev2/images/side.png" alt="Model B side CAD view" width="450"><br><sub>Side</sub></p>
+<p align="center"><img src="model_B/rev2/images/back_plate.png" alt="Model B separate back plate CAD view" width="450"><br><sub>Separate back plate</sub></p>
+<p align="center"><img src="model_B/rev2/images/stand.png" alt="Model B separate stand CAD view" width="450"><br><sub>15° desk stand</sub></p>
+
+[FreeCAD model](model_B/rev2/Headway_desk_rev2.FCStd) · [STEP](model_B/rev2/Headway_desk_rev2.step) · [parts, print orientation and assembly](model_B/rev2/README_DESK_REV2.md)
+
+## About the printed parts
+
+Using heat-set threaded inserts was a first for me. I like being able to open the case again without cutting a fresh screw thread in the plastic each time. The source notes specify four M2.5 × 3 × 3.5 inserts, three M2.5 × 12 countersunk screws for the display posts and one M2.5 × 6 for the corner boss. The optional fit-test STL is intended to check the window before a full shell print. Print settings and insertion steps are in each model's README.
+
+The CAD geometry has had script-level overlap checks, but the current enclosure revisions still need a complete physical fit, screw engagement and heat check. The image renderer is in [render_views.py](render_views.py), so the five-view sets can be recreated from the FreeCAD-exported STL files.

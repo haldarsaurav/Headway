@@ -1,6 +1,6 @@
 # AI and automated-use policy
 
-**Prior written permission from Sam / @haldarsaurav is required.**
+**Prior written permission from Saurav Haldar (@haldarsaurav) is required.**
 This is a proprietary project. Public visibility is not an invitation to reuse it.
 
 Without that permission, do not use protected project material:
@@ -15,7 +15,7 @@ The policy applies to human users and organisations operating AI systems, as wel
 providers and automated tools. Credit or noncommercial intent does not replace permission.
 The owner's explicit instruction to a collaborator or tool authorizes only the requested work.
 
-[Ask the owner for permission](https://github.com/haldarsaurav/train_bus_weather_signboard/issues)
+[Ask the owner for permission](https://github.com/haldarsaurav/headway/issues)
 and wait for an explicit written grant describing the permitted use. Include which material,
 version, intended output, tools/models and distribution you propose. If issues are unavailable,
 use a contact method published on [the owner's profile](https://github.com/haldarsaurav).

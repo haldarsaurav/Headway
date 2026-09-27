@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091632">
+  <meta name="description" content="Headway is Saurav Haldar's small Freising train, bus and weather board, built with an ESP32-C3 and a 3.2-inch screen.">
+  <title>Headway — a small window on the day</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Headway, back to top"><span class="brand-mark">H<span>·</span></span> HEADWAY</a>
+    <nav aria-label="Main navigation">
+      <a href="#story">The idea</a><a href="#screens">Screens</a><a href="#setup">Setup</a><a href="#enclosures">Enclosures</a><a href="#hardware">Hardware</a>
+    </nav>
+    <a class="header-code" href="https://github.com/haldarsaurav/Headway_code">Code ↗</a>
+  </header>
+  <main id="main">
+    <section id="top" class="hero wrap">
+      <img class="banner" src="assets/headway-banner.svg" alt="HEADWAY in a navy and yellow departure-board banner" width="1400" height="390">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">A personal build · Freising · ESP32-C3</p>
+          <h1>A small window on the day.</h1>
+          <p class="lead">I wanted to see the station before I left home: the next train, whether it had been running late over the last few hours, and the weather while I brush my teeth and get ready.</p>
+          <p>Headway turns that routine into a little always-on sign. I picture Model A beside the bathroom mirror or by the front door. Model B has a 15° stand for my desk.</p>
+          <div class="actions"><a class="button primary" href="#screens">Explore the screens</a><a class="button" href="#enclosures">See the cases</a></div>
+        </div>
+        <figure class="hero-screen">
+          <img src="previews_v1.2.6/A_2_trains.png" alt="Bahnsteig theme showing sample Freising train departures" width="320" height="240">
+          <figcaption>Software preview with sample departures, not a live board photo.</figcaption>
+        </figure>
+      </div>
+      <div class="hero-facts" aria-label="At a glance"><span><strong>5</strong> looks</span><span><strong>3</strong> feeds: trains, buses, weather</span><span><strong>2</strong> enclosure forms</span><span><strong>1</strong> button</span></div>
+    </section>
+
+    <section id="story" class="section warm">
+      <div class="wrap story-grid">
+        <div>
+          <p class="eyebrow">Why I made it</p><h2>Before the walk to the station</h2>
+          <p>The station board is useful when I am already there. I wanted the same quick glance earlier, at home, when there is still time to change plans. The three-hour strip at the bottom is my way of asking, “Has it been a messy morning?” It shows reported lateness in fetched departures, with gaps where the feed could not tell me enough.</p>
+          <p>The weather pages matter in the same ordinary way: do I need a jacket, will rain arrive while I am out, and what does the next part of the day look like? The board cycles only if I ask it to; otherwise a tap moves to the next page.</p>
+          <p class="small-note">The photo is a real station sign I saw in Freising. It is a visual reference for the project, not Headway hardware.</p>
+        </div>
+        <figure><img src="assets/station-reference.jpg" alt="A real departure board at Freising station, photographed as a visual reference" loading="lazy"><figcaption>That familiar glance at the station, brought home a little earlier.</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="screens" class="section wrap">
+      <p class="eyebrow">The display</p><h2>One board, five personalities</h2>
+      <p class="section-intro">The same train, bus and weather data can look like a classic sign, a bright platform board, an amber dot matrix, paper, or split flaps. Original is the default. These are renders from the real drawing code using sample data; the 1.2.7 screens are unchanged from these 1.2.6 previews apart from the boot version.</p>
+      <div class="controls" aria-label="Choose a look"><button class="theme-choice active" data-theme="O" aria-pressed="true">Original</button><button class="theme-choice" data-theme="A" aria-pressed="false">Bahnsteig</button><button class="theme-choice" data-theme="B" aria-pressed="false">Amber Matrix</button><button class="theme-choice" data-theme="C" aria-pressed="false">Papier</button><button class="theme-choice" data-theme="F" aria-pressed="false">Split-Flap</button></div>
+      <div class="controls secondary" aria-label="Choose a page"><button class="page-choice active" data-page="2_trains" aria-pressed="true">Trains</button><button class="page-choice" data-page="3_stadtbus" aria-pressed="false">Town bus</button><button class="page-choice" data-page="4_pr" aria-pressed="false">P+R bus</button><button class="page-choice" data-page="5_weather" aria-pressed="false">Weather now</button><button class="page-choice" data-page="6_outlook" aria-pressed="false">Outlook</button><button class="page-choice" data-page="8_setup" aria-pressed="false">Device setup</button></div>
+      <div class="preview-card"><figure><a id="preview-link" href="previews_v1.2.6/O_2_trains.png"><img id="preview" src="previews_v1.2.6/O_2_trains.png" alt="Original theme, sample train page" width="320" height="240"></a><figcaption id="preview-caption">Original · train departures · sample data</figcaption></figure><div class="preview-notes"><h3>What you see</h3><p id="page-description">The next trains at Freising: line, destination, platform, revised departure and minutes to go. The footer plots reported lateness from the last three hours.</p><p id="theme-description">The original navy sign keeps the layout that started the project.</p><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/FEATURE_GUIDE.md">Every symbol and field, explained →</a></div></div>
+      <div class="screen-guide">
+        <article><span class="step">01</span><h3>Trains</h3><p>Up to 24 services across one to four pages. Planned time is struck through when a revised time is reported. A red X marks a cancellation; a blank or timetable-only value does not prove punctuality.</p><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/FEATURE_GUIDE.md#train-pages">Read the train guide →</a></article>
+        <article><span class="step">02</span><h3>Local buses</h3><p>Bahnhof Stadtbus and P+R-Platz have separate pages. They show up to ten departures each, including a bay when the feed provides one. Long via destinations can scroll if enabled.</p><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/FEATURE_GUIDE.md#bus-pages">Read the bus guide →</a></article>
+        <article><span class="step">03</span><h3>Weather</h3><p>Current conditions and a twelve-hour rain and temperature chart, followed by three days of highs, lows, wind, UV, daylight and moon phase. The backdrop follows day, dusk and night.</p><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/FEATURE_GUIDE.md#weather-now">Read the weather guide →</a></article>
+        <article><span class="step">04</span><h3>History and health</h3><p>The three-hour train strip averages comparable realtime lateness in the fetched board. Separate marks show cancellations and incomplete coverage. Each feed has its own health state.</p><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/DELAY_GRAPH.md">How the delay graph works →</a></article>
+      </div>
+    </section>
+
+    <section id="flow" class="section dark">
+      <div class="wrap"><p class="eyebrow">Under the hood</p><h2>From feeds to a glance</h2><p class="section-intro">The flow is simple enough to follow without reading the firmware. It also explains what happens when one service goes quiet.</p>
+        <div class="flow" aria-label="Data flow diagram"><div><strong>Transitous</strong><small>Trains and local buses</small></div><div><strong>Open-Meteo</strong><small>Current and forecast weather</small></div><div class="flow-wide"><strong>ESP32-C3</strong><small>Fetch · validate · keep feed health separate</small></div><div class="flow-wide"><strong>Headway screen</strong><small>Pages · countdowns · three-hour train history</small></div></div>
+        <p class="flow-note">Fresh data depends on Wi-Fi and upstream coverage. During an outage, retained rows can become stale; countdowns still advance and expired rows leave the board. Missing graph samples remain gaps.</p>
+      </div>
+    </section>
+
+    <section id="setup" class="section wrap">
+      <p class="eyebrow">The one-button routine</p><h2>Getting it ready</h2>
+      <ol class="setup-steps"><li><strong>Power it by USB-C.</strong> On first use, the screen shows a QR code for the <code>Headway-Setup</code> Wi-Fi network.</li><li><strong>Join that network on your phone.</strong> Scan the second QR code or open <code>http://192.168.4.1/</code> in a browser.</li><li><strong>Set the cards below, then Save and restart.</strong> The phone returns to its normal Wi-Fi; the board fetches its first readings.</li><li><strong>Tap the BOOT button</strong> for the next page. Hold it for three seconds to reopen setup after the board has started.</li></ol>
+      <p class="small-note">The cards below are a reading guide to the device's setup portal. The actual portal appears only in setup mode and scrolls as one narrow page on a phone.</p>
+      <div class="portal-grid">
+        <article class="portal-card"><span>01 / connect</span><h3>Wi-Fi</h3><p>Choose a 2.4 GHz network or type its name. A blank password keeps the saved one for the same network. Hidden networks can be entered by name.</p></article>
+        <article class="portal-card"><span>02 / locate</span><h3>Weather place</h3><p>Detect an approximate place from the internet connection, or type a town. This changes weather only; the transport stops remain in Freising.</p></article>
+        <article class="portal-card"><span>03 / style</span><h3>Look</h3><p>Pick Original, Bahnsteig, Amber Matrix, Papier or Split-Flap. The portal preview changes at once; the board changes after Save.</p></article>
+        <article class="portal-card"><span>04 / move</span><h3>Pages and names</h3><p>Automatic page changes are off by default. Set a dwell interval if enabled. Destination scrolling is a separate choice and also defaults to off.</p></article>
+        <article class="portal-card save"><span>05 / finish</span><h3>Save and restart</h3><p>Settings are stored and the device restarts. A software restart preserves the recent delay graph, with a gap for time spent in setup.</p></article>
+        <article class="portal-card reset"><span>start fresh</span><h3>Start over</h3><p>This clears Wi-Fi, weather place, look, page settings and delay history. The portal asks again before doing it. Removing power also clears the delay history.</p></article>
+      </div>
+      <p class="more-link"><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/FEATURE_GUIDE.md#boot-controls-and-setup">Full setup, controls and troubleshooting guide →</a></p>
+    </section>
+
+    <section id="enclosures" class="section warm">
+      <div class="wrap"><p class="eyebrow">The object itself</p><h2>Two places to put it</h2><p class="section-intro">Model A is the wall case I imagine by the mirror or near the front door. Model B is the desk version with a separate 15° stand and USB-C access from the right. Both are current FreeCAD designs; printed fit has not been formally verified.</p>
+        <div class="model-tabs"><button class="model-choice active" data-model="A" aria-pressed="true">Model A · wall</button><button class="model-choice" data-model="B" aria-pressed="false">Model B · desk</button></div>
+        <div class="model-main"><figure><img id="model-image" src="../enclosure/model_A/rev9/images/isometric.png" alt="Isometric CAD view of Model A wall enclosure front shell" loading="lazy"><figcaption id="model-caption">Model A Rev9 · isometric front shell · rendered from its FreeCAD-exported STL</figcaption></figure><div><h3 id="model-heading">Model A · wall case</h3><p id="model-description">A slim case to mount near the morning routine. The current Rev9 uses four M2.5 heat-set inserts: three hold the display and help close the case, and a fourth secures the back plate's corner.</p><p><a id="model-cad" href="../enclosure/model_A/rev9/Headway_enclosure_rev9.FCStd">Open FreeCAD source →</a></p><p><a id="model-build" href="../enclosure/model_A/rev9/README_REV9.md">Parts and assembly notes →</a></p></div></div>
+        <div class="view-choices" aria-label="Choose a CAD view"><button class="view-choice active" data-view="isometric" aria-pressed="true">Isometric</button><button class="view-choice" data-view="front" aria-pressed="false">Front</button><button class="view-choice" data-view="back" aria-pressed="false">Back</button><button class="view-choice" data-view="top" aria-pressed="false">Top</button><button class="view-choice" data-view="side" aria-pressed="false">Side</button><button class="view-choice" data-view="back_plate" aria-pressed="false">Back plate</button><button class="view-choice" data-view="stand" aria-pressed="false" hidden>Stand</button></div>
+        <p class="small-note">The views above are rendered from the current FreeCAD exports. The back view shows the shell's inside face; the back plate is shown separately. Geometry and photo colours are illustrative.</p>
+        <div class="print-grid"><figure><img src="assets/print-warm.jpg" alt="A physical 3D print of Headway case parts on a printer bed under warm light" loading="lazy"><figcaption>Real print in progress, warm light. This is a case part, not a finished powered device.</figcaption></figure><figure><img src="assets/print-cool.jpg" alt="A physical 3D print of Headway case parts on a printer bed under blue light" loading="lazy"><figcaption>Another print photo under blue light. Fit and assembly still need hands-on checking.</figcaption></figure></div>
+        <div class="insert-note"><strong>A first for me:</strong> I used heat-set thread inserts in this enclosure. The threaded joints make the back removable without asking the plastic to hold a screw thread each time. Rev9 and desk rev2 use four M2.5 inserts and four countersunk screws; the earlier case versions used three.</div>
+      </div>
+    </section>
+
+    <section id="hardware" class="section wrap">
+      <p class="eyebrow">Two boards and nine wires</p><h2>Hardware and pinout</h2><p class="section-intro">An ESP32-C3 Super Mini drives a 3.2-inch MSP3218 ILI9341 SPI display at 320 × 240 in landscape. The existing BOOT button doubles as the page and setup button. Touch and SD-card pins on the display are unused.</p>
+      <figure class="wiring"><img src="assets/wiring.svg" alt="Logical wiring diagram: display VCC to 3V3, GND to GND, LED to 5V, CS to GPIO7, RESET to GPIO10, DC to GPIO3, MOSI to GPIO6, SCK to GPIO4 and MISO to GPIO5" loading="lazy"><figcaption>Logical connection map for this build. Read your board's silkscreen before wiring; Super Mini clones can differ.</figcaption></figure>
+      <div class="hardware-links"><a href="https://github.com/haldarsaurav/Headway/blob/main/docs/SCHEMATIC.md">Full wiring table and power notes →</a><a href="https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.html">ESP32-C3 module datasheet ↗</a><a href="https://www.lcdwiki.com/res/MSP3218/3.2inch_SPI_Module_MSP3218_User_Manual_EN.pdf">MSP3218 display manual and pinout ↗</a><a href="https://www.lcdwiki.com/3.2inch_SPI_Module_ILI9341_SKU:MSP3218">MSP3218 product page ↗</a></div>
+      <div class="energy"><h3>Running cost, with the assumption shown</h3><p>At an assumed average draw of <strong>0.75 W</strong> and continuous operation, Headway would use <strong>6.57 kWh in a year</strong> (<code>0.00075 kW × 24 × 365</code>). At an example energy price of <strong>€0.30/kWh</strong>, that is about <strong>€1.97/year</strong> in energy, excluding standing charges. The 0.75 W figure is a working estimate, not a documented meter reading for this revision; a USB power meter is the next check.</p></div>
+    </section>
+
+    <section class="section dark last"><div class="wrap"><p class="eyebrow">Where the project stands</p><h2>Software is ready for the first hardware pass</h2><p>The current source is firmware <strong>1.2.7</strong>. The screens were rendered on a PC and the logic, graph and setup checks passed. The 1.2.1–1.2.7 firmware still needs an ESP32 compile, flash and screen check; the current CAD needs a physical fit check. Those checks are described in the <a href="https://github.com/haldarsaurav/Headway/blob/main/docs/PROJECT_STATUS.md">project status</a>.</p><p>Transport data comes through <a href="https://transitous.org/">Transitous</a>; weather comes from <a href="https://open-meteo.com/">Open-Meteo</a>. Headway is my independent personal project, not an official transit product. The repository is public to read, with reuse governed by its <a href="https://github.com/haldarsaurav/Headway/blob/main/LICENSE">permission-only licence</a> and <a href="https://github.com/haldarsaurav/Headway/blob/main/AI_POLICY.md">AI-use policy</a>.</p><div class="actions"><a class="button primary" href="https://github.com/haldarsaurav/Headway">Public repository ↗</a><a class="button" href="https://github.com/haldarsaurav/Headway_code">Code repository ↗</a></div></div></section>
+  </main>
+  <footer><div class="wrap">© 2026 Saurav Haldar · Headway <span>Made for the few minutes before leaving home.</span></div></footer>
+</body>
+</html>
