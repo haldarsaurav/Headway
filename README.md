@@ -15,7 +15,7 @@ The [screen and icon guide](docs/FEATURE_GUIDE.md) goes page by page. [Firmware 
 
 ## Why I built Headway
 
-I live near Freising and kept checking departures on my phone just before going out. I wanted the answer to be there at a glance: what leaves next, whether trains have been running late for the past few hours, and whether I should take a jacket or expect rain. The idea is to put Model A beside my bathroom mirror or near the front door, where I can see it while I brush my teeth and start the day. Model B sits on my desk.
+because why not? 😁
 
 It is a 3.2-inch ILI9341 screen driven by an ESP32-C3 Super Mini. One tap on the board's BOOT button moves to the next page. A three-second hold opens setup. The board reads transport data through [Transitous](https://transitous.org/) and weather from [Open-Meteo](https://open-meteo.com/); it is an independent personal build, not an official operator display.
 
