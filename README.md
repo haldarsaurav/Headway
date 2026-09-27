@@ -2,7 +2,7 @@
 
 <p align="center"><strong>Train and bus departures, the last few hours at the station, and the weather before I leave home.</strong></p>
 
-<p align="center"><a href="docs/index.html">Explore the mobile-friendly project page</a> · <a href="docs/FEATURE_GUIDE.md">Screen and icon guide</a> · <a href="enclosure/README.md">Enclosures</a> · <a href="https://github.com/haldarsaurav/Headway_code">Firmware and tests</a></p>
+<p align="center"><a href="docs/index.html">Mobile site source (Pages-ready)</a> · <a href="docs/FEATURE_GUIDE.md">Screen and icon guide</a> · <a href="enclosure/README.md">Enclosures</a> · <a href="https://github.com/haldarsaurav/Headway_code">Firmware and tests</a></p>
 
 ## Why I built Headway
 
@@ -18,13 +18,83 @@ The [project page](docs/index.html) lets you switch **five looks** and the train
 
 <p align="center"><img src="docs/previews_v1.2.6/O_2_trains.png" alt="Original look train departures" width="320"> <img src="docs/previews_v1.2.6/A_2_trains.png" alt="Bahnsteig look train departures" width="320"><br><sub>Original and Bahnsteig, using the same sample departures.</sub></p>
 
-<details><summary>See all five train looks</summary>
+<details><summary>Original — the first platform-sign layout</summary>
 
-<p align="center"><img src="docs/previews_v1.2.6/O_2_trains.png" alt="Original look" width="320"><br>Original — the first platform-sign layout</p>
-<p align="center"><img src="docs/previews_v1.2.6/A_2_trains.png" alt="Bahnsteig look" width="320"><br>Bahnsteig — navy and signal yellow</p>
-<p align="center"><img src="docs/previews_v1.2.6/B_2_trains.png" alt="Amber Matrix look" width="320"><br>Amber Matrix — electronic display dots</p>
-<p align="center"><img src="docs/previews_v1.2.6/C_2_trains.png" alt="Papier look" width="320"><br>Papier — light paper and ink</p>
-<p align="center"><img src="docs/previews_v1.2.6/F_2_trains.png" alt="Split-Flap look" width="320"><br>Split-Flap — mechanical tile lettering</p>
+<p align="center"><img src="docs/previews_v1.2.6/O_2_trains.png" alt="Original train board software preview" width="320"><br><sub>Original · train board · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/O_3_stadtbus.png" alt="Original town bus software preview" width="320"><br><sub>Original · town bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/O_4_pr.png" alt="Original P+R bus software preview" width="320"><br><sub>Original · P+R bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/O_5_weather.png" alt="Original weather now software preview" width="320"><br><sub>Original · weather now · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/O_6_outlook.png" alt="Original three-day outlook software preview" width="320"><br><sub>Original · three-day outlook · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/O_8_setup.png" alt="Original device setup software preview" width="320"><br><sub>Original · device setup · sample data</sub></p>
+
+</details>
+
+<details><summary>Bahnsteig — navy and signal yellow</summary>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_2_trains.png" alt="Bahnsteig train board software preview" width="320"><br><sub>Bahnsteig · train board · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_3_stadtbus.png" alt="Bahnsteig town bus software preview" width="320"><br><sub>Bahnsteig · town bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_4_pr.png" alt="Bahnsteig P+R bus software preview" width="320"><br><sub>Bahnsteig · P+R bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_5_weather.png" alt="Bahnsteig weather now software preview" width="320"><br><sub>Bahnsteig · weather now · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_6_outlook.png" alt="Bahnsteig three-day outlook software preview" width="320"><br><sub>Bahnsteig · three-day outlook · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/A_8_setup.png" alt="Bahnsteig device setup software preview" width="320"><br><sub>Bahnsteig · device setup · sample data</sub></p>
+
+</details>
+
+<details><summary>Amber Matrix — electronic display dots</summary>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_2_trains.png" alt="Amber Matrix train board software preview" width="320"><br><sub>Amber Matrix · train board · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_3_stadtbus.png" alt="Amber Matrix town bus software preview" width="320"><br><sub>Amber Matrix · town bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_4_pr.png" alt="Amber Matrix P+R bus software preview" width="320"><br><sub>Amber Matrix · P+R bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_5_weather.png" alt="Amber Matrix weather now software preview" width="320"><br><sub>Amber Matrix · weather now · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_6_outlook.png" alt="Amber Matrix three-day outlook software preview" width="320"><br><sub>Amber Matrix · three-day outlook · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/B_8_setup.png" alt="Amber Matrix device setup software preview" width="320"><br><sub>Amber Matrix · device setup · sample data</sub></p>
+
+</details>
+
+<details><summary>Papier — light paper and ink</summary>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_2_trains.png" alt="Papier train board software preview" width="320"><br><sub>Papier · train board · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_3_stadtbus.png" alt="Papier town bus software preview" width="320"><br><sub>Papier · town bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_4_pr.png" alt="Papier P+R bus software preview" width="320"><br><sub>Papier · P+R bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_5_weather.png" alt="Papier weather now software preview" width="320"><br><sub>Papier · weather now · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_6_outlook.png" alt="Papier three-day outlook software preview" width="320"><br><sub>Papier · three-day outlook · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/C_8_setup.png" alt="Papier device setup software preview" width="320"><br><sub>Papier · device setup · sample data</sub></p>
+
+</details>
+
+<details><summary>Split-Flap — mechanical tile lettering</summary>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_2_trains.png" alt="Split-Flap train board software preview" width="320"><br><sub>Split-Flap · train board · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_3_stadtbus.png" alt="Split-Flap town bus software preview" width="320"><br><sub>Split-Flap · town bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_4_pr.png" alt="Split-Flap P+R bus software preview" width="320"><br><sub>Split-Flap · P+R bus · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_5_weather.png" alt="Split-Flap weather now software preview" width="320"><br><sub>Split-Flap · weather now · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_6_outlook.png" alt="Split-Flap three-day outlook software preview" width="320"><br><sub>Split-Flap · three-day outlook · sample data</sub></p>
+
+<p align="center"><img src="docs/previews_v1.2.6/F_8_setup.png" alt="Split-Flap device setup software preview" width="320"><br><sub>Split-Flap · device setup · sample data</sub></p>
 
 </details>
 
@@ -49,6 +119,8 @@ flowchart TD
     P -->|Save and restart| E
 ```
 
+I liked how [CapturedPortal](https://github.com/haKC-ai/CapturedPortal) uses a flowchart to make a project legible, so I drew the Headway data path above.
+
 The feeds have separate health states. A working weather refresh cannot hide a failed train refresh. During an outage, countdowns still advance and expired rows disappear; retained readings may become stale. [Status and remaining hardware checks](docs/PROJECT_STATUS.md).
 
 ## First setup, in plain steps
@@ -58,7 +130,16 @@ The feeds have separate health states. A working weather refresh cannot hide a f
 3. Choose a 2.4 GHz network, automatic or typed weather town, one of the five looks, and optional page changes and scrolling. Press **Save and restart**.
 4. Tap BOOT for the next page; hold it for three seconds to reopen setup. Hold it only after startup, because GPIO 9 is a boot strap pin.
 
-The portal presents Wi-Fi, weather place, look, page behaviour, Save and Start over as individual cards. The [project page walks through each card](docs/index.html#setup), while the [feature guide](docs/FEATURE_GUIDE.md#boot-controls-and-setup) covers the details. **Start over** asks again, then forgets the Wi-Fi and every setting and empties the delay history.
+The portal presents its controls in separate cards:
+
+- **Wi-Fi:** choose a scanned 2.4 GHz network or type its name; leaving the password empty keeps the saved one for the same network.
+- **Weather place:** detect an approximate location from the connection, or enter a town. The Freising transport stops stay fixed.
+- **Look:** Original is the default; the other four choices preview immediately in the portal, then apply to the board after Save.
+- **Pages and names:** automatic page changes and destination scrolling are independent and off by default; set the page interval when automatic changes are on.
+- **Save and restart:** stores the settings and restarts. The delay graph keeps recent readings across that software restart, leaving a gap while setup was open.
+- **Start over:** asks a second time, then forgets Wi-Fi and every setting and empties the history.
+
+The [feature guide](docs/FEATURE_GUIDE.md#boot-controls-and-setup) covers the QR screens, controls and troubleshooting. **Start over** asks again, then forgets the Wi-Fi and every setting and empties the delay history.
 
 ## The two cases
 
